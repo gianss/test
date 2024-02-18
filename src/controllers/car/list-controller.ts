@@ -1,5 +1,5 @@
 import { ok, serverError } from '@/utils/http-helper'
-import { HttpResponse } from '@/models/http-response'
+import { HttpResponse } from '@/models/interfaces/http-response'
 import { CarRepositoryInterface } from '@/repositories/car-repository'
 import { AuctionBidRepositoryInterface } from '@/repositories/auction-bid-repository'
 import { CarResponse } from '@/models/dtos/car-response'

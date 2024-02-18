@@ -1,5 +1,5 @@
 import { badRequest, ok, serverError } from '@/utils/http-helper'
-import { HttpResponse } from '@/models/http-response'
+import { HttpResponse } from '@/models/interfaces/http-response'
 import { CarRequest } from '@/models/dtos/car-request'
 import { StatusCar } from '@/models/car-model'
 import { CarResponse } from '@/models/dtos/car-response'

@@ -1,5 +1,5 @@
 import { badRequest, ok, serverError } from '@/utils/http-helper'
-import { HttpResponse } from '@/models/http-response'
+import { HttpResponse } from '@/models/interfaces/http-response'
 import { CarRepositoryInterface } from '@/repositories/car-repository'
 import { AuctionBidRepositoryInterface } from '@/repositories/auction-bid-repository'
 import { ValidationFieldsInterface } from '@/utils/validation-fields'

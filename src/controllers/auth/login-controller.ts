@@ -1,5 +1,5 @@
 import { badRequest, ok, serverError, unauthorized } from '@/utils/http-helper'
-import { HttpResponse } from '@/models/http-response'
+import { HttpResponse } from '@/models/interfaces/http-response'
 import { UserRepositoryInterface } from '@/repositories/user-repository'
 import { ValidationFieldsInterface } from '@/utils/validation-fields'
 import { EmailValidationInterface } from '@/utils/email-validator'

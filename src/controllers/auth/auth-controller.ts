@@ -1,4 +1,4 @@
-import { HttpResponse } from '@/models/http-response'
+import { HttpResponse } from '@/models/interfaces/http-response'
 import { UserRepositoryInterface } from '@/repositories/user-repository'
 import { JwtAdapterInterface } from '@/utils/jwt-adapter'
 

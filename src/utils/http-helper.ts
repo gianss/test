@@ -1,4 +1,4 @@
-import { HttpResponse } from '@/models/http-response'
+import { HttpResponse } from '@/models/interfaces/http-response'
 
 export const badRequest = (error: any): HttpResponse => ({
   statusCode: 400,
