@@ -7,7 +7,7 @@ export const badRequest = (error: any): HttpResponse => ({
 
 export const unauthorized = (message?: string): HttpResponse => ({
   statusCode: 401,
-  body: message || 'Você não tem autorização'
+  body: message || 'Você não tem autorização. Token invalido'
 })
 
 export const serverError = (): HttpResponse => ({
