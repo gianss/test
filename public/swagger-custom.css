@@ -1,8 +1,5 @@
-.swagger-ui .topbar {
-    background-color: #491e7a;
-}
-
 .swagger-ui .topbar a {
     content: url('/public/logo.png');
-    width: 140px;
+    max-width: 234px;
+    padding: 15px;
 }
