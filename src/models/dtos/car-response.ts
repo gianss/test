@@ -17,5 +17,5 @@ export interface CarResponse {
     initialBid: number
     lastBid?: LastBidInterface
     winner?: UserInterface
-    photos: PhotoInterface
+    photos?: PhotoInterface
 }

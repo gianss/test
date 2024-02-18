@@ -9,7 +9,7 @@ export interface CarRequest {
     mileage: number
     color: string
     fuelType: string
-    photos: PhotoInterface
+    photos?: PhotoInterface
     transmissionType: string
     initialBid: number
 }

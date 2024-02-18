@@ -3,7 +3,7 @@ import { unauthorized } from '@/utils/http-helper'
 describe('HTTP Helper unauthorized', () => {
     test('should return a default message when no message parameter is provided', () => {
         const result = unauthorized()
-        expect(result.body).toEqual('Você não tem autorização')
+        expect(result.body).toEqual('Você não tem autorização. Token invalido')
     })
 
     test('should return the provided message when a message parameter is provided', () => {
