@@ -1,4 +1,4 @@
-import { PhotosInterface } from '../interfaces/photo'
+import { PhotoInterface } from '../interfaces/photo'
 
 export interface CarRequest {
     brand: string
@@ -9,7 +9,7 @@ export interface CarRequest {
     mileage: number
     color: string
     fuelType: string
-    photos: PhotosInterface
+    photos: PhotoInterface
     transmissionType: string
     initialBid: number
 }

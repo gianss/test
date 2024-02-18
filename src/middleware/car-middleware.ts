@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import { addCarControllerFactory, finishAuctionCarControllerFactory, listCarControllerFactory } from './factories/car-factory'
 import { CarRequest } from '@/models/dtos/car-request'
-import { PhotosInterface } from '@/models/interfaces/photo'
+import { PhotoInterface } from '@/models/interfaces/photo'
 
 export class CarMiddleware {
     save = async (req: Request, res: Response): Promise<void> => {
@@ -10,7 +10,7 @@ export class CarMiddleware {
         if (Array.isArray(req.files)) {
             photos = req.files
         }
-        const processedPhotos: PhotosInterface[] = photos.map((photo: Express.Multer.File): any => {
+        const processedPhotos: PhotoInterface[] = photos.map((photo: Express.Multer.File): any => {
             return {
                 path: photo.path,
                 name: photo.originalname,

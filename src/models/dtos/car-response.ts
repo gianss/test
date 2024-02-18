@@ -1,5 +1,5 @@
 import { LastBingInterface } from '../interfaces/lastBid'
-import { PhotosInterface } from '../interfaces/photo'
+import { PhotoInterface } from '../interfaces/photo'
 import { UserInterface } from '../interfaces/user'
 
 export interface CarResponse {
@@ -17,5 +17,5 @@ export interface CarResponse {
     initialBid: number
     lastBid?: LastBingInterface
     winner?: UserInterface
-    photos: PhotosInterface
+    photos: PhotoInterface
 }
