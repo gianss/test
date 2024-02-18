@@ -1,7 +1,7 @@
 import { model, Document, Schema } from 'mongoose'
 import { PhotoInterface } from './interfaces/photo'
 import { UserInterface } from './interfaces/user'
-import { LastBingInterface } from './interfaces/lastBid'
+import { LastBidInterface } from './interfaces/lastBid'
 
 export interface Car extends Document {
     brand: string
@@ -18,7 +18,7 @@ export interface Car extends Document {
     photos: PhotoInterface
     winner_id: string
     winner?: UserInterface
-    lastBid?: LastBingInterface
+    lastBid?: LastBidInterface
 }
 
 export enum StatusCar {

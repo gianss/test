@@ -1,3 +1,3 @@
-export interface LastBingInterface {
+export interface LastBidInterface {
     value: number
 }

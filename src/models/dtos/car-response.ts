@@ -1,4 +1,4 @@
-import { LastBingInterface } from '../interfaces/lastBid'
+import { LastBidInterface } from '../interfaces/lastBid'
 import { PhotoInterface } from '../interfaces/photo'
 import { UserInterface } from '../interfaces/user'
 
@@ -15,7 +15,7 @@ export interface CarResponse {
     transmissionType: string
     registration_date: number
     initialBid: number
-    lastBid?: LastBingInterface
+    lastBid?: LastBidInterface
     winner?: UserInterface
     photos: PhotoInterface
 }
