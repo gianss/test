@@ -1,0 +1,43 @@
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "John Doe"
+        email:
+          type: string
+          example: "john@example.com"
+        password:
+          type: string
+          example: "password123"
+        phone:
+          type: string
+          example: "123456789"
+
+paths:
+  /user:
+    post:
+      summary: "Cadastro de usuarios"
+      description: "Esta rota é usada para cadastrar um novo usuario do tipo user."
+      tags: ["Usuário"]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        "200":
+          description: "Operação bem-sucedida."
+          content:
+            application/json:
+              example:
+                token: "any_token"
+        "400":
+          description: "Parâmetros inválidos."
+        "401":
+          description: "Sem autorização."
+        "403":
+          description: "Acesso bloqueado."

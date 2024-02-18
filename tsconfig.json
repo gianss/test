@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "es2019",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "rootDirs": [
+      "src",
+      "tests"
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@/tests/*": [
+        "tests/*"
+      ],
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "tests"
+  ],
+  "exclude": [],
+  "files": [
+    "src/config/custom-modules.d.ts"
+  ]
+}

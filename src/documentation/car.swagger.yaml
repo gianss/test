@@ -1,0 +1,216 @@
+components:
+  schemas:
+    Car:
+      type: object
+      properties:
+        brand:
+          type: string
+          example: "Toyota"
+        carModel:
+          type: string
+          example: "Corolla"
+        year:
+          type: integer
+          example: 2022
+        location:
+          type: string
+          example: "São Paulo"
+        status:
+          type: string
+          example: "disponivel"
+        mileage:
+          type: number
+          example: 50000
+        color:
+          type: string
+          example: "Blue"
+        fuelType:
+          type: string
+          example: "Gasoline"
+        transmissionType:
+          type: string
+          example: "Automatic"
+        initialBid:
+          type: number
+          example: 20000
+
+/car:
+  get:
+    summary: "Listar todos os carros"
+    description: "Esta rota é usada para listar todos os carros cadastrados."
+    tags: ["Carro"]
+    parameters:
+      - name: search
+        in: query
+        description: "Termo de pesquisa por marca, modelo ou localização."
+        required: false
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: "Especifique o status dos carros a serem pesquisados. Valores válidos são 'disponivel' ou 'disponivel'."
+        required: false
+        schema:
+          type: string
+      - name: limit
+        in: query
+        description: "Limite máximo de carros a serem retornados na requisição."
+        required: false
+        schema:
+          type: integer
+      - name: offset
+        in: query
+        description: "Número de carros a serem ignorados no início da resposta."
+        required: false
+        schema:
+          type: integer
+    responses:
+      "200":
+        description: "Operação bem-sucedida."
+        content:
+          application/json:
+            example:
+              total: 138
+              cars:
+                - id: "1"
+                  brand: "Ford"
+                  carModel: "Focus"
+                  year: 2020
+                  location: "São Paulo"
+                  status: "disponivel"
+                  mileage: 50000
+                  color: "Blue"
+                  fuelType: "Gasoline"
+                  transmissionType: "Automatic"
+                  initialBid: 25000
+                - id: "2"
+                  brand: "Chevrolet"
+                  carModel: "Cruze"
+                  year: 2019
+                  location: "Rio de Janeiro"
+                  status: "disponivel"
+                  mileage: 60000
+                  color: "Black"
+                  fuelType: "Flex"
+                  transmissionType: "Automatic"
+                  initialBid: 30000
+                - id: "3"
+                  brand: "Volkswagen"
+                  carModel: "Golf"
+                  year: 2018
+                  location: "Belo Horizonte"
+                  status: "disponivel"
+                  mileage: 70000
+                  color: "Red"
+                  fuelType: "Alcool"
+                  transmissionType: "Manual"
+                  initialBid: 20000
+  post:
+    summary: "Cadastro de carro"
+    description: "Esta rota é usada para cadastrar um novo carro. Somente o usuário do tipo 'root' tem acesso."
+    tags: ["Carro"]
+    security: [{ ApiKeyAuth: [] }]
+    requestBody:
+      required: true
+      content:
+        multipart/form-data:
+          schema:
+            type: object
+            required:
+              - brand
+              - carModel
+              - year
+              - location
+              - status
+              - mileage
+              - color
+              - fuelType
+              - transmissionType
+              - initialBid
+            properties:
+              brand:
+                type: string
+              carModel:
+                type: string
+              year:
+                type: integer
+                format: int32
+              location:
+                type: string
+              status:
+                type: string
+              mileage:
+                type: integer
+                format: int32
+              color:
+                type: string
+              fuelType:
+                type: string
+              transmissionType:
+                type: string
+              initialBid:
+                type: integer
+                format: int32
+              photos:
+                type: array
+                items:
+                  type: string
+                  format: binary
+    responses:
+      "200":
+        description: "Operação bem-sucedida."
+        content:
+          application/json:
+            example:
+              data:
+                id: "4"
+                brand: "Fiat"
+                carModel: "Uno"
+                year: 2015
+                location: "Salvador"
+                status: "disponivel"
+                mileage: 80000
+                color: "White"
+                fuelType: "Alcool"
+                transmissionType: "Manual"
+                initialBid: 15000
+      "400":
+        description: "Parâmetros inválidos."
+      "401":
+        description: "Sem autorização."
+      "403":
+        description: "Acesso bloqueado."
+
+/car/finish-auction/{card_id}:
+  put:
+    summary: "Finalizar lances pelo veiculo"
+    description: "Esta rota é usada para Finalizar lances pelo veiculo"
+    tags: ["Carro"]
+    security: [{ ApiKeyAuth: [] }]
+    parameters:
+      - name: card_id
+        in: query
+        description: "Id do carro para finalização"
+        required: false
+        schema:
+          type: string
+    responses:
+      "200":
+        description: "Operação bem-sucedida."
+        content:
+          application/json:
+            example:
+              total: 138
+              cars:
+                id: "1"
+                registration_date: "1708276113130"
+                bid_date: "1708276113130"
+                user:
+                  name: "Insta carro"
+                  email: "instacarro@gmail.com"
+      "400":
+        description: "Parâmetros inválidos."
+      "401":
+        description: "Sem autorização."
+      "403":
+        description: "Acesso bloqueado."

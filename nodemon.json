@@ -1,0 +1,13 @@
+{
+  "verbose": true,
+  "watch": [
+    "src/**/*.ts",
+    "src/**/*.json",
+    "src/**/*.yaml"
+  ],
+  "ext": "ts js json yaml",
+  "ignore": [
+    "src/**/*.spec.ts"
+  ],
+  "exec": "ts-node -r tsconfig-paths/register src/server.ts"
+}
