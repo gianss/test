@@ -51,6 +51,7 @@ export class AddCarController {
             }
             return ok({ data: carResponse })
         } catch (error) {
+            console.log('dsdsadsadsadsa')
             console.log(error)
             return serverError()
         }

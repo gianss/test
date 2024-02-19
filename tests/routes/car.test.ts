@@ -48,11 +48,15 @@ afterAll(async () => {
 })
 
 describe('Add Car Integration Tests', () => {
-    test('should return a successful response when creating a car with valid data', async () => {
-        const response = await request(server)
+    test('should return a successful response when creating a car with valid data and file upload', async () => {
+        const requestObject = request(server)
             .post('/car')
             .set('x-access-token', token)
-            .send(carRequest)
+        Object.keys(carRequest).forEach(key => {
+            requestObject.field(key, carRequest[key])
+        })
+        requestObject.attach('photos', './public/logo.png')
+        const response = await requestObject
         expect(response.status).toBe(200)
     })
 
