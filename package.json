@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "init": "npm i && docker-compose up",
-    "start": "ts-node src/server.ts",
+    "start": "ts-node dist/server.js",
     "dev": "nodemon",
     "docker:build": "docker-compose build --no-cache",
     "docker:start": "docker-compose up",

@@ -4,21 +4,20 @@
 
 Para iniciar o projeto, siga estas etapas:
 
-  - Instalar pacotes
-
-  ```bash
-  npm i
-  ```
-
 1. Certifique-se de ter o Docker eo docker composer instalado em seu ambiente.
 
 2. Execute o seguinte comando na raiz do projeto:
 
    ```bash
-   docker-compose up
+   npm init
    ```
 
    Isso iniciará os contêineres necessários.
+
+caso queira iniciar sem os container garanta pode configurar as variaveis de ambiente no env e executar os seguuintes comandos
+
+npm run dev para o run com nodemon
+npm run build && npm run start para run com node 
 
 3. Será criado um usuário root para cadastro de carros e finalização de leilões:
 
