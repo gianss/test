@@ -4,7 +4,7 @@
 
 Para iniciar o projeto, siga estas etapas:
 
-  - Atualizar pacotes
+  - Instalar pacotes
 
   ```bash
   npm i
