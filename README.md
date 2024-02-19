@@ -4,6 +4,12 @@
 
 Para iniciar o projeto, siga estas etapas:
 
+  - Atualizar pacotes
+
+  ```bash
+  npm i
+  ```
+
 1. Certifique-se de ter o Docker eo docker composer instalado em seu ambiente.
 
 2. Execute o seguinte comando na raiz do projeto:
@@ -22,12 +28,6 @@ Para iniciar o projeto, siga estas etapas:
 ## Testes
 
 Para executar os testes do projeto, você pode usar os seguintes comandos:
-
-  - Atualizar pacotes
-
-  ```bash
-  npm i
-  ```
   
 - Todos os testes:
 
