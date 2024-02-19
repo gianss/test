@@ -121,7 +121,6 @@ components:
               - carModel
               - year
               - location
-              - status
               - mileage
               - color
               - fuelType
@@ -136,8 +135,6 @@ components:
                 type: integer
                 format: int32
               location:
-                type: string
-              status:
                 type: string
               mileage:
                 type: integer
@@ -181,16 +178,16 @@ components:
       "403":
         description: "Acesso bloqueado."
 
-/car/finish-auction/{card_id}:
+/car/finish-auction/{id}:
   put:
     summary: "Finalizar lances pelo veiculo"
     description: "Esta rota é usada para Finalizar lances pelo veiculo"
     tags: ["Carro"]
     security: [{ ApiKeyAuth: [] }]
     parameters:
-      - name: card_id
-        in: query
-        description: "Id do carro para finalização"
+      - name: id
+        in: path
+        description: "Id do carro para finalização do leilão"
         required: false
         schema:
           type: string

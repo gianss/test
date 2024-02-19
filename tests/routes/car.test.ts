@@ -68,14 +68,6 @@ describe('Add Car Integration Tests', () => {
         expect(response.status).toBe(400)
     })
 
-    test('should return status 400 if the car status is invalid', async () => {
-        const response = await request(server)
-            .post('/car')
-            .set('x-access-token', token)
-            .send({ ...carRequest, status: 'any_invalid_status' })
-        expect(response.status).toBe(400)
-    })
-
     test('should return status 400 if any value is in an invalid format', async () => {
         const response = await request(server)
             .post('/car')
