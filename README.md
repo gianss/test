@@ -23,6 +23,12 @@ Para iniciar o projeto, siga estas etapas:
 
 Para executar os testes do projeto, você pode usar os seguintes comandos:
 
+  - Atualizar pacotes
+
+  ```bash
+  npm i
+  ```
+  
 - Todos os testes:
 
   ```bash
