@@ -9,7 +9,7 @@ import { connection } from 'mongoose'
 import { carRequest, invalidCarRequest } from '../mocks/car'
 import { CarModel } from '@/models/car-model'
 import { AuctionBidModel } from '@/models/auction-bind-model'
-import { rmdirSync } from 'fs'
+import { rmdirSync, existsSync } from 'fs'
 
 const email = faker.internet.email()
 let server
@@ -49,8 +49,18 @@ afterAll(async () => {
 })
 
 describe('Add Car Integration Tests', () => {
+    test('should return status 200 when creating a car', async () => {
+        const response = await request(server)
+            .post('/car')
+            .set('x-access-token', token)
+            .send(carRequest)
+        expect(response.status).toBe(200)
+    })
+
     test('should return a successful response when creating a car with valid data and file upload', async () => {
-        rmdirSync('uploads', { recursive: true })
+        if (existsSync('uploads')) {
+            rmdirSync('uploads', { recursive: true })
+        }
         const requestObject = request(server)
             .post('/car')
             .set('x-access-token', token)
