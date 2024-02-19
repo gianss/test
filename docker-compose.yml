@@ -23,7 +23,6 @@ services:
       PORT: 3000
       JWT_KEY: 'any_token'
     volumes:
-      - ./upload:/app/upload
       - /app/node_modules
       - .:/app
     depends_on:

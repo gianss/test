@@ -9,6 +9,6 @@ COPY . /app
 
 RUN npm run build
 
-CMD chmod -R 777 upload && npm run seeds && npm run dev
+CMD npm run seeds && npm run dev
 
 EXPOSE 3000
