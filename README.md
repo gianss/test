@@ -29,12 +29,6 @@ Para executar os testes do projeto, você pode usar os seguintes comandos:
   npm run test
   ```
 
-- Testes apenas nos arquivos modificados (Staged):
-
-  ```bash
-  npm run test:staged
-  ```
-
 - Testes para Ambiente de Integração Contínua (CI) com cobertura:
 
   ```bash
