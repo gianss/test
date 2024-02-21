@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "init": "npm i && docker-compose up",
+    "up": "npm i && docker-compose up",
     "start": "ts-node dist/server.js",
     "dev": "nodemon",
     "docker:build": "docker-compose build --no-cache",

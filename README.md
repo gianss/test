@@ -9,7 +9,7 @@ Para iniciar o projeto, siga estas etapas:
 2. Execute o seguinte comando na raiz do projeto:
 
    ```bash
-   npm init
+   npm run up
    ```
 
    Isso iniciará os contêineres necessários.
